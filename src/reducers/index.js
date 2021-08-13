@@ -1,6 +1,6 @@
 import { START_FETCH, FETCH_SUCCESS, FAIL_FETCH, NEW_SMURF, ERROR } from "../actions"
 export const initialState = {
-    smurfs: [],
+    smurf: [],
     isLoading: false,
     errorMessage: ''
 }
@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                smurfs: action.payload
+                smurf: action.payload
             }
         case FAIL_FETCH:
             return {
@@ -26,7 +26,7 @@ const reducer = (state = initialState, action) => {
         case NEW_SMURF:
             return {
                 ...state,
-                smurfs: [...state.smurfs, action.payload]
+                smurf: [...state.smurf, action.payload]
             }
         case ERROR:
             return {
